@@ -1,0 +1,10 @@
+.sec1 {
+	font-weight: bold;
+} 
+.lastSec {
+	font-weight: bold;
+	font-style: italic;
+}
+.btn {
+	display: block;
+}

@@ -1,6 +1,3 @@
-// The first section's text should be bold.
-// The last section's text should be bold and italicized.
-// Make the buttons stop appearing next to each other as inline elements. Change them into block elements.
 
 var output = document.getElementById("output-target");
 var title = document.getElementById("page-title");
@@ -10,6 +7,8 @@ var guinea = document.getElementById("guinea-pig");
 var hulkButton = document.getElementById("make-large");
 var capture = document.getElementById("add-border");
 var rounded = document.getElementById("add-rounding");
+var sections = document.getElementsByClassName("article-section");
+var buttons = document.getElementsByTagName("button");
 
 
 // When any section is clicked the output target text should be "You clicked on the {text of the section} section"
@@ -54,6 +53,22 @@ function addBorder(){
 function roundBorder(){
 	guinea.style.borderRadius="20px";
 };
+
+// The first section's text should be bold.
+// The last section's text should be bold and italicized.
+for (var i=0; i<sections.length; i++){
+	if (sections[i].textContent==="Introduction"){
+		sections[i].classList.add("sec1");
+	} else if (sections[i].textContent==="Conclusion"){
+		sections[i].classList.add("lastSec");
+	}
+};
+
+// Make the buttons stop appearing next to each other as inline elements. Change them into block elements.
+for (var j=0; j<buttons.length; j++){
+	buttons[j].classList.add("btn");
+};
+
 
 title.addEventListener("mouseover", hoverTitle);
 title.addEventListener("mouseout", leaveTitle);
